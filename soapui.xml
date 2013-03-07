@@ -1,0 +1,53 @@
+<project name="Portal" basedir="./" default="API-TEST">
+
+ <!-- define project location -->
+ <property name="Portal" value="Portal-soapui-project.xml" />
+
+ <!-- define targets -->
+ <target name="API-TEST">
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sAuthentication -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sFramework -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sAPIM -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sMFIS -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+ 
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sLOGS -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+    <arg line="-sADMIN -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sIAAS -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sUSERS -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sKMTC -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+	
+	<exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sAccess -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+
+    <exec executable="${env.SOAPUI.BIN}/testrunner.sh" failonerror="false" failifexecutionfails="false">
+     <arg line="-sSecurity -rja -f/var/lib/jenkins/jobs/Portal/workspace/tests/reports Portal-soapui-project.xml"/>
+    </exec>
+
+</target>
+</project>
